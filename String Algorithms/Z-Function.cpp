@@ -21,7 +21,8 @@ The process computes all of the Z values in a single pass over the string, so we
 
 #include <bits/stdc++.h>
 using namespace std;
-int z[100000];
+#define MAX 100000
+int z[MAX];
 
 void zFunction(string &s) {
 	int n = s.size();
