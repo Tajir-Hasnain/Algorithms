@@ -45,8 +45,7 @@ bool bfs() {
 	
 			int v = graph[top][i];
 	
-			if(level[v] == -1 && f[top][v] < c[top][v]) {	//the node is not visited 
-															//and the flow in the node < its capacity
+			if(level[v] == -1 && f[top][v] < c[top][v]) {	//the node is not visited and the flow in the node < its capacity
 	
 				level[v] = level[top] + 1;
 	
@@ -58,8 +57,7 @@ bool bfs() {
 	
 	}
 	
-	return level[sink] != -1;	//Return wheather there is a path available or not 
-								//i.e. the sink is visited or not in the bfs
+	return level[sink] != -1;	//Return wheather there is a path available or not i.e. the sink is visited or not in the bfs
 }
 
 int dfs(int u , int flow) {
