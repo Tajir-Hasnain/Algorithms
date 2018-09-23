@@ -31,7 +31,7 @@ int main() {
 			
 			sparse[i][j] = min(sparse[ i ][ j - 1 ] , sparse[ i + (int)pow(2,j) - 1 ][ j - 1 ] );	
 		}
-	}
+	} 
 
 	//----Preprocess ends---
 
