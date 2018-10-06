@@ -26,7 +26,7 @@ int main() {
 	log[1] = 0;
 	
 	for (int i = 2; i <= MAXN; i++) 
-    	log[i] = log[i/2] + 1;
+    		log[i] = log[i/2] + 1;
 
 	for(int i = 0; i < n; ++i)
 		sparse[i][0] = a[i];
