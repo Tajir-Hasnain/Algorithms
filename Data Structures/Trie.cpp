@@ -25,7 +25,8 @@ bool find(string s) {
 		else
 			idx = trie[idx][s[i]-'a'];
 	}
-	return true;
+	return finish[idx];		//if finding word
+	//return true;			//if finding prefix
 }
 
 int main() {
