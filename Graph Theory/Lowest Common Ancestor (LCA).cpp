@@ -1,3 +1,6 @@
+// Preprocessing Time : O(nlogn)
+//Query Time : O(logn)
+
 #include <bits/stdc++.h>
 using namespace std;
 
