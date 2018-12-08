@@ -201,7 +201,6 @@ void faltu( T arg, const hello &... rest) {
 #define dbg(args...)
 #endif // tajir
 
-
 int main()
 {
 	#ifdef tajir
@@ -211,8 +210,8 @@ int main()
 	#endif
 	optimize();
 	
-
-
+	
+	
 	return 0;
 }
 
