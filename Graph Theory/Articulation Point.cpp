@@ -2,7 +2,8 @@ class ArticulationPoint {
 private:
 	int node,edge,timer;
 	vector < bool > vis;
-	vector < int > tin,fup,art_point;
+	vector < int > tin,fup;
+	set < int > art_point;
 	vector < vector < int > > adj;
 
 	void dfs(int u, int p = -1) {
@@ -18,12 +19,12 @@ private:
 				dfs(v,u);
 				fup[u] = min(fup[u] , fup[v]);
 				if(fup[v]>= tin[u] && p != -1) 
-					art_point.pb(u);
+					art_point.insert(u);
 				++children;
 			}
 		}
 		if(p == -1 && children > 1)
-			art_point.pb(u);
+			art_point.insert(u);
 	}
 
 	void find_cutpoints(vector < vector < int > > graph) {
@@ -45,7 +46,7 @@ public:
 		find_cutpoints();
 	}
 
-	vector < int > getPoints() {
+	set < int > getPoints() {
 		return art_point;
 	}
 };
