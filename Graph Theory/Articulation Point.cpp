@@ -19,9 +19,9 @@ private:
 			else {
 				dfs(v,u);
 				fup[u] = min(fup[u] , fup[v]);
-				if(fup[v] > tin[u] && p != -1)  {
+				if(fup[v] > tin[u])  {
 					art_point.insert(u);
-					art_bridge.insert(make_pair(u,v));
+					art_bridge.insert(make_pair(min(u,v) , max(u,v) ));
 				}
 				++children;
 			}
@@ -37,9 +37,8 @@ private:
 		}
 	}
 public:
-	ArticulationPoint(vector < vector < int > > graph , int n, int m) {
+	ArticulationPoint(vector < vector < int > > graph , int n) {
 		node = n;
-		edge = m;
 		adj = graph;
 		timer = 0;
 		vis.assign(n,false);
