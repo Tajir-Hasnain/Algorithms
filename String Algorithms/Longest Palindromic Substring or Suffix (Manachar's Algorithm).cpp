@@ -1,3 +1,11 @@
+/*
+* Can find longest palindromic substring or suffix
+* Also we can find the longest palindromic prefix by reversing the string and then getting longest palindromic suffix
+* Usage :
+*   Manachar lps(s);
+*   string substring = lps.getPalindromeSubstring();
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
