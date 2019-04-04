@@ -6,9 +6,6 @@
 *   string substring = lps.getPalindromeSubstring();
 */
 
-#include <bits/stdc++.h>
-using namespace std;
-
 class Manachar {
 private:
     int maxPalindrome=0, maxPalindromeSuffixSize=0;
