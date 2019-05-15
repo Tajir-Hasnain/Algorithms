@@ -31,11 +31,11 @@ struct DisjointSet {
             return false;
         } else if (rank[x] < rank[y]) {
             parent[x] = y;
-            count[y]++;
+            count[y] += count[x];
         } else {
             parent[y] = x;
             rank[x] = max(rank[x], rank[y] + 1);
-            count[x]++;
+            count[x] += count[y];
         }
         return true;
     }
