@@ -55,9 +55,10 @@ ll query(ll node, ll left, ll right, ll l, ll r) {
     push(node,left,right);
 
     ll tm = (left+right)>>1;
-
+    
+    //Change here
+    
     if(r<= tm)    return query(lc, left, tm, l, r);
     else if(l > tm)    return query(rc, tm+1, right, l, r);
     else
-        return ( query(lc, left, tm, l , r) + query(rc, tm+1, right, l, r) );       //Change here
-}
+        return ( query(lc, left, tm, l , r) + query(rc, tm+1, right, l, r) );
