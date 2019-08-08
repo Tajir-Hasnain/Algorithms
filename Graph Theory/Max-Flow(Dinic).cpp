@@ -72,12 +72,12 @@ class Dinic {
 	}
 public:
 
-	Dinic(int nodes,int edges, vector < vector < int > > g, vector < vector < int > > cost) {
+	Dinic(int nodes,int edges, vector < vector < int > > g, vector < vector < int > > cost,int sc, int sk) {
 		n = nodes , m = edges;
 
 		graph = g , c = cost;
 		level.assign(n+1,-1);
-		source = 1 , sink = n;
+		source = sc , sink = sk;
 		f.assign(n+1,vector<int>(n+1,0));
 
 	}
