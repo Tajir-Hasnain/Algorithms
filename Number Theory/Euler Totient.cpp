@@ -1,6 +1,7 @@
 class EulerTotient {
 
-	unsigned long long phi[N + 7];
+	vector < long long > phi;
+	int N;
 
 	void generatePhi() {
 	    phi[1] = 0;
@@ -16,7 +17,9 @@ class EulerTotient {
 	}
 
 public:
-	EulerTotient() {
+	EulerTotient(long long n) {
+		N = n;
+		phi.assign(N+7,0);
 		generatePhi();
 	}
 
