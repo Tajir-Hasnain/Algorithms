@@ -30,4 +30,15 @@ public:
 		return fx;
 	}
 
+	long long sumOfNonCoPrimesOfAnInteger(long long n) {
+		/*
+			This function returns the sum of numbers x from 1 to N-1, where gcd(x,n) > 1
+		*/
+
+		ll sum = n*(n-1) / 2;
+		sum -= sumOfCoPrimesOfAnInteger;
+
+		return sum;
+	}
+
 };
