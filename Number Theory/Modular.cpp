@@ -101,6 +101,8 @@ public:
 		return a;
 	}
 
+	// S_n = a^0 + a^1 + a^2 + a^3 + ... + a^n
+	// S_n %= m
 	long long sumOfPowersOfN(long long a, long long n) {
 		if(n == 0)
 				return 1;
