@@ -60,15 +60,15 @@ public:
 	//Binary Exponentials
 	//when m is not a prime number
 	long long binPow(long long a, long long b, long long m) {
-	    a %= m;
-	    long long res = 1;
-	    while (b > 0) {
-	        if (b & 1)
-	            res = res * a % m;
-	        a = a * a % m;
-	        b >>= 1;
-	    }
-	    return res;
+		a %= m;
+		long long res = 1;
+		while (b > 0) {
+			if (b & 1)
+				res = res * a % m;
+			a = a * a % m;
+			b >>= 1;
+		}
+		return res;
 	}
 
 	long long binMul(long long a, long long b,long long m) {
