@@ -1,5 +1,6 @@
 class Modular {
 	long long MOD = 1000000007;
+	long long m = MOD;
 
 	void normal(long long &a) {
 		a %= MOD;
@@ -11,7 +12,12 @@ class Modular {
 public:
 
 	Modular() {};
-	Modular(long long m) : MOD(m) {};
+	Modular(long long M,long long mm) {
+		if(M != 0)
+			MOD = M;
+		if(m != 0)
+			m = mm;
+	}
 
 	long long modMul(long long a, long long b) { 
 		a %= MOD, b %= MOD; 
@@ -59,7 +65,7 @@ public:
 
 	//Binary Exponentials
 	//when m is not a prime number
-	long long binPow(long long a, long long b, long long m) {
+	long long binPow(long long a, long long b) {
 		a %= m;
 		long long res = 1;
 		while (b > 0) {
@@ -71,7 +77,7 @@ public:
 		return res;
 	}
 
-	long long binMul(long long a, long long b,long long m) {
+	long long binMul(long long a, long long b) {
 		long double x;
 		long long c;
 		long long r;
@@ -81,6 +87,37 @@ public:
 		c = x * b / m;
 		r = (long long)(a * b - c * m) % (long long)m;
 		return r < 0 ? r + m : r;
+	}
+
+	long long binSub(long long a, long long b) {
+		a %= m,	b %= m;
+		if(a < 0)	a += m;
+		if(b < 0)	b += m;
+
+		a -= b;
+
+		if(a < 0)	a += m;
+
+		return a;
+	}
+
+	long long sumOfPowersOfN(long long a, long long n) {
+		if(n == 0)
+				return 1;
+			if(n == 1)
+				return a;
+
+		long long half = binPow(a, n>>1);
+		long long temp = sumOfPowersOfN(a, n >> 1);
+
+		ll sum1 = (temp % m + binMul(half,temp)) % m;
+		ll sum2 = binMul(half,half);
+		sum2 = binMul(sum2,a);
+
+		if(n & 1)
+			return (sum1+sum2) % m;
+		else
+			return sum1;
 	}
 
 };
